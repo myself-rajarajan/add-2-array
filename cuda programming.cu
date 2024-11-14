@@ -1,4 +1,4 @@
-
+// GPU operation on NVIDIA 3050 
 // __global__ is the function specifier to define the cuda kernal that run the actual GPU
 __global__ void add(int *a, int *b, int *c){                                     
   int i = threadIdx.x + blockDim.x * blockIdx.x;                              // to add 2 vectors or arrays together
@@ -22,5 +22,6 @@ int main(){
     result_sum += vector_c[i];                                   // result to store the output. 
   }
 
+  printf(" I added vectors add on GPU");
   printf("result: sum = %d", result_sum);
 }
